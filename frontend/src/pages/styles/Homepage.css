@@ -1,0 +1,77 @@
+.login:hover{
+  scale: 0.8;
+  transition: 1s ease-in-out;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+} */
+
+.navigation {
+    height: 60px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    color: white;
+    box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+.navigation-menu ul {
+    display: flex;
+    padding: 0;
+    text-align: center;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 1rem;
+  }
+
+  .navigation-menu li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: 1s;
+   
+    /*add those for opera and mozilla support*/
+    -webkit-text-decoration-color: transparent;
+    -moz-text-decoration-color: transparent;
+  }
+
+.navigation-menu li a:hover{
+  text-decoration-color: #B07612;
+ 
+  /*add those for opera and mozilla support*/
+  -webkit-text-decoration-color: #B07612;
+  -moz-text-decoration-color: #B07612;
+  transition: text-decoration-color 1s ;
+}
+
+@media (max-width: 767px) {
+  .navigation-menu li{
+    margin: 0.3rem;
+  }
+
+  .navigation-menu li a {
+    font-size: 9px;
+    width: 100%;
+  }
+
+  .wrapper{
+    width: 100%;
+  }
+}

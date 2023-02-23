@@ -1,0 +1,29 @@
+.fa {
+    color: #fff !important;
+  }
+  
+.foll{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foll h2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.meida-clali{
+  text-align: center;
+}
+
+.meida-clali a{
+  text-decoration: none;
+  color: white;
+}
+
+.botto-cont{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
