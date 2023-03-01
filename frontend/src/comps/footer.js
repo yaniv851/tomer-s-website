@@ -9,17 +9,7 @@ function Footer() {
         <div className="foll">
           <h2 dir="rtl" className="followUS">עקבו אחרינו:</h2>
           <div className="footcont">
-          <a href="#" style={{ color: "#fff", marginRight: "1rem" }}>
-            <Icon className="icon">
-              <i className="fab fa-facebook-f" />
-            </Icon>
-          </a>
-          <a href="#" style={{ color: "#fff", marginRight: "1rem" }}>
-            <Icon className="icon">
-              <i className="fab fa-twitter" /> 
-            </Icon> 
-          </a>
-          <a href="#" style={{ color: "#fff", marginRight: "1rem" }}>
+          <a href="https://www.instagram.com/mehabursa/" style={{ color: "#fff", marginRight: "1rem" }}>
             <Icon className="icon">
               <i className="fab fa-instagram" />
             </Icon>

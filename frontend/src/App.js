@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./pages/HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Article from "./pages/article";
-import About from "./pages/about";
+import Accordion from "./pages/about";
 import Product from "./comps/product";
 import T1 from "./pages/takanon/t1";
 import T2 from "./pages/takanon/t2";
@@ -16,8 +16,14 @@ import MyDropzone from "./pages/myDropzone";
 import Qa from "./pages/qa-an";
 import Footer from "./comps/footer";
 import Trade from "./pages/trade-in";
+import "./comps/style/socialIcons.css";
 
 function App() {
+  const [showIcons, setShowIcons] = useState(true);
+
+  const handleXmarkClick = () => {
+    setShowIcons(!showIcons);
+  }
   return (
     <div className="wrapper">
       <div style={{
@@ -55,11 +61,26 @@ function App() {
           </div>
         </nav>
       </div>
+      <div class="wrapi">
+        {showIcons && (
+          <>
+            <a class="social" href="https://wa.me/0523337455">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a class="social" href="tel:0523337455">
+              <i class="fas fa-phone"></i>
+            </a>
+          </>
+        )}
+        <a class="social" onClick={handleXmarkClick}>
+          <i>X</i>
+        </a>
+      </div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} exact/>
+          <Route path="/" element={<Home />} exact />
           <Route path="article" element={<Article />} />
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<Accordion />} />
           <Route path="/product" element={<Product />} />
           <Route path="/takanon1" element={<T1 />} />
           <Route path="/takanon2" element={<T2 />} />
@@ -67,11 +88,11 @@ function App() {
           <Route path="/takanon4" element={<T4 />} />
           <Route path="/takanon5" element={<T5 />} />
           <Route path="/takanon6" element={<T6 />} />
-          <Route path="/blogs" element={<Blogs/>}/>
-          <Route path="/blog/:slug" element={<Blog/>}/>
-          <Route path="/vali" element={<MyDropzone/>}/>
-          <Route path="/answers" element={<Qa/>} />
-          <Route path="/trade" element={<Trade/>} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/:slug" element={<Blog />} />
+          <Route path="/vali" element={<MyDropzone />} />
+          <Route path="/answers" element={<Qa />} />
+          <Route path="/trade" element={<Trade />} />
         </Routes>
       </BrowserRouter>
 

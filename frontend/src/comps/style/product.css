@@ -8,23 +8,35 @@
 .price {
     display: flex;
     align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .price p {
-    margin: 20px;
+    margin: 5px;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.price del{
+    font-weight: 600;
+    font-size: 17px;
+    color: rgb(60, 60, 60);
 }
 
 .product .big-image {
-    max-width: 450px;
-    min-width: 200px;
+    width: 356px;
     overflow: hidden;
+    object-fit: cover;
     margin: 25px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .big-image img {
     width: 100%;
     height: 100%;
-    max-height: 300px;
+    max-height: 600px;
     display: block;
     object-fit: cover;
 }
@@ -61,8 +73,29 @@
     cursor: pointer;
 }
 
+.prodcontent{
+    width: 100%;
+    /* text-align: center; */
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .product .prodcontent pre{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    white-space: break-spaces;
+}
+
+.stracture-make{
+    display: flex;
+    flex-direction: row;
+}
+
+.stracture-make .rotate{
+    transform: rotate(180deg);
+    transition: transform 0.2s ease-in-out;
 }
 
 .thumb ul {
@@ -70,21 +103,95 @@
     width: 100%;
     height: 100%;
     display: flex;
-    margin: 10px 0;
+    /* margin: 10px 0; */
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.thumb ul li{
+    margin-bottom: 10px;
 }
 
 .pictur {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
 }
 
+.diamond-info{
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 
+    6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.heads{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+    cursor: pointer;
+}
+
+.heads h3{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.diamond-info:hover{
+    background: #B07612;
+    padding-left: 10px;
+    color: white;
+}
+
+.diamond-info:hover .accordion-arrow{
+    color: white;
+  }
+
 @media (max-width: 767px) {
+    .product .big-image{
+        width: 80%;
+        margin: 2px;
+    }
+
     .thumb img {
         width: 70px;
         height: 130px;
     }
+
+    .stracture-make{
+        flex-direction: column;
+    }
+
     .thumb video {
         width: 70px;
         height: 130px;
+    }
+
+    .prodcontent{
+        width: 100%;
+        text-align: start;
+      }
+
+    .prodcontent pre{
+        font-size: 5px;
+        width: 300px;
+        align-items: flex-start;
+    }
+
+    .thumb ul{
+        margin-left: 2px;
+    }
+
+    .thumb ul li{
+        margin-bottom: 2px;
+    }
+
+    .diamond-info h3{
+        text-align: center;
     }
 }

@@ -1,0 +1,65 @@
+.wrapi{ 
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:1000;
+  }
+  
+  .wrapi a:nth-child(1){
+    background-color:green;
+  }
+  
+  .wrapi a:nth-child(2){
+    background-color:blue;
+  }
+  
+  
+  .wrapi a:nth-child(3){
+      
+    animation: 0.7s ease-out 0s 1 FadeIn;
+    transition:all 0.3s;
+  }
+  
+  
+  .wrapi a:hover:nth-child(3){
+      
+    background-color:red;
+  }
+  
+  
+  @keyframes FadeIn {
+    0% {
+     transform:rotate(0deg);
+    }
+    100% {
+      transform:rotate(360deg); 
+    }
+  }
+  
+  
+  .hide{
+    position:absolute;
+    bottom:0px !important;
+    z-index:-1;
+    transition:all 2s;
+    
+  }
+  
+  .wrapi a{ 
+      height:40px;
+      width:40px;
+      background:#000;
+      padding:10px;
+      display:flex;
+      flex-direction:row;
+      border-radius:50%;
+      justify-content:center;
+      align-items:center; 
+      text-decoration:none;
+      color:#fff;
+      margin:2px;
+  }
+
+  .wrapi a i{
+    font-size: 25px;
+  }

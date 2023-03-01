@@ -7,13 +7,13 @@ import Fade from 'react-reveal/Fade';
 function Card(props) {
   const navigate = useNavigate();
 
-  function handleClick(poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price) {
-    navigate(`/product`, { state: { poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price } });
+  function handleClick(poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price, collection, color,weight,clean,diamondType) {
+    navigate(`/product`, { state: { poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price, collection, color, weight, clean, diamondType } });
   };
 
   return (
     <Fade bottom>
-      <div style={styles.card} className="cards" onClick={() => handleClick(props.poster1, props.poster2, props.poster3, props.poster4, props.poster5, props.poster6, props.title, props.body, props.video, props.price)}>
+      <div style={styles.card} className="cards" onClick={() => handleClick(props.poster1, props.poster2, props.poster3, props.poster4, props.poster5, props.poster6, props.title, props.body, props.video, props.price, props.collection, props.color, props.clean, props.weight, props.diamondType)}>
         <img src={props.poster1} alt={props.alt} />
         <p>{props.title}</p>
         <div className='cate-content'>
@@ -45,6 +45,11 @@ function CardContainer() {
           poster4,
           poster5,
           poster6,
+          collection,
+          weight,
+          color,
+          clean,
+          diamondType,
           Price,
         }`
       )
@@ -94,6 +99,11 @@ function CardContainer() {
                 alt={product.poster1}
                 title={product.title}
                 body={product.body}
+                collection={product.collection}
+                weight={product.weight}
+                clean={product.clean}
+                diamondType={product.diamondType}
+                color={product.color}
                 price={`${product.Price}`}
               />
             ))
