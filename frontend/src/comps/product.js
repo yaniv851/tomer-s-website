@@ -37,6 +37,7 @@ function Product() {
 
   return (
     <div className='product' dir='rtl'>
+      <h1 className="product-title-mobile">{title}</h1>
       <div className='stracture-make'>
         <div className='pictur'>
           <div className='big-image'>
@@ -48,7 +49,7 @@ function Product() {
 
           <div className='thumb'>
             <ul>
-              <li><video className='prodpic' src={video} onClick={() => setSelectedImage(video)}></video></li>
+              <li><video className='prodpic' src={video} onClick={() => setSelectedImage(video)} style={{ opacity: video ? 1 : 0 }}></video></li>
               {poster1 && <li><img className='prodpic' src={poster1} alt={poster1} onClick={() => setSelectedImage(poster1)} /></li>}
               {poster2 && <li><img className='prodpic' src={poster2} alt={poster2} onClick={() => setSelectedImage(poster2)} /></li>}
               {poster3 && <li><img className='prodpic' src={poster3} alt={poster3} onClick={() => setSelectedImage(poster3)} /></li>}
@@ -60,11 +61,12 @@ function Product() {
         </div>
 
         <div className='prodcontent'>
-          {title && <h1>{title}</h1>}
+          <h1 className="product-title-pc">{title}</h1>
           <div className='price'>
             {price && <p>{price}₪</p>}
             <del>{parseInt(price) + parseInt(price) * 0.25}₪</del>
           </div>
+          <div className='tas'>
           {body && <pre>{body}</pre>}
           <div className={`diamond-info ${isExpanded ? 'diamond-info-active' : ''}`}>
             <h3 onClick={() => handleExpandClick(0)}>
@@ -116,6 +118,7 @@ function Product() {
               }}
             />
           </PayPalScriptProvider>
+          </div>
         </div>
       </div>
     </div>

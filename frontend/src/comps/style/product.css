@@ -18,7 +18,7 @@
     font-size: 25px;
 }
 
-.price del{
+.price del {
     font-weight: 600;
     font-size: 17px;
     color: rgb(60, 60, 60);
@@ -30,15 +30,20 @@
     object-fit: cover;
     margin: 25px;
     border-radius: 20px;
+    transition: 1s;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .big-image img {
     width: 100%;
     height: 100%;
-    max-height: 600px;
     display: block;
     object-fit: cover;
+}
+
+.big-image:hover{
+    scale: 0.9;
+    transition: 1s;
 }
 
 .big-image video {
@@ -59,6 +64,12 @@
     opacity: 0.7;
     border-radius: 5px;
     cursor: pointer;
+    transition: 1s;
+}
+
+.thumb img:hover{
+    scale: 1.1;
+    transition: 1s;
 }
 
 .thumb video {
@@ -71,29 +82,36 @@
     opacity: 0.7;
     border-radius: 5px;
     cursor: pointer;
+    transition: 1s;
 }
 
-.prodcontent{
+.thumb video:hover{
+    scale: 1.1;
+    transition: 1s;
+}
+
+.prodcontent {
     width: 100%;
     /* text-align: center; */
     display: flex;
     align-items: flex-start;
-    text-align: center;
+    text-align: start;
     justify-content: center;
     flex-direction: column;
 }
 
-.product .prodcontent pre{
+.product .prodcontent pre {
     font-size: 15px;
     white-space: break-spaces;
+    font-family: 'Tinos', serif;
 }
 
-.stracture-make{
+.stracture-make {
     display: flex;
     flex-direction: row;
 }
 
-.stracture-make .rotate{
+.stracture-make .rotate {
     transform: rotate(180deg);
     transition: transform 0.2s ease-in-out;
 }
@@ -108,7 +126,7 @@
     margin-left: 20px;
 }
 
-.thumb ul li{
+.thumb ul li {
     margin-bottom: 10px;
 }
 
@@ -117,45 +135,68 @@
     flex-direction: row-reverse;
 }
 
-.diamond-info{
-    width: 100%;
+.diamond-info {
+    width: 40%;
     margin-bottom: 20px;
     border-radius: 20px;
     background-color: #fff;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 
-    6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
     cursor: pointer;
 }
 
-.heads{
+.diamond-info h3 {
+    text-align: center;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;}
+
+.heads {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;    
+    text-align: center;
     cursor: pointer;
 }
 
-.heads h3{
+.heads h3 {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.diamond-info:hover{
+.diamond-info:hover {
     background: #B07612;
     padding-left: 10px;
     color: white;
 }
 
-.diamond-info:hover .accordion-arrow{
+.diamond-info:hover .accordion-arrow {
     color: white;
-  }
+}
+
+.product-title {
+    display: block;
+    text-align: center;
+}
 
 @media (max-width: 767px) {
-    .product .big-image{
+    .product .big-image {
         width: 80%;
         margin: 2px;
+    }
+
+    .big-image img{
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
+    .thumb ul{
+        flex-direction: row;
+        width: 100%;
     }
 
     .thumb img {
@@ -163,7 +204,12 @@
         height: 130px;
     }
 
-    .stracture-make{
+    .pictur{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stracture-make {
         flex-direction: column;
     }
 
@@ -172,26 +218,69 @@
         height: 130px;
     }
 
-    .prodcontent{
+    .prodcontent {
         width: 100%;
-        text-align: start;
-      }
+    }
 
-    .prodcontent pre{
+    .tas{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .prodcontent pre {
         font-size: 5px;
         width: 300px;
         align-items: flex-start;
     }
 
-    .thumb ul{
+    .thumb ul {
         margin-left: 2px;
     }
 
-    .thumb ul li{
+    .thumb ul li {
         margin-bottom: 2px;
     }
 
-    .diamond-info h3{
+    .diamond-info{
+        width: 53%;
+    }
+
+    .diamond-info h3 {
         text-align: center;
+        display: flex;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-title {
+        display: inline-block;
+        margin-right: 20px;
+        text-align: left;
     }
 }
+
+.product-title-pc {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Tinos', serif;
+  }
+  
+  .product-title-mobile {
+    display: none;
+    font-family: 'Tinos', serif;
+  }
+    
+  @media only screen and (max-width: 600px) {
+    .product-title-pc {
+      display: none;
+    }
+    
+    .product-title-mobile {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+  
