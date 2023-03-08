@@ -63,7 +63,7 @@ body{
 
   .accordion-item:hover{
     background: #B07612;
-    padding-left: 10px;
+    padding-right: 10px;
     color: white;
   }
 

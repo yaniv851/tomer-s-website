@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import sanityClient from "../client2";
-import { useNavigate } from 'react-router-dom';
+import uuid from "uuid";
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./style/products.css";
 import Fade from 'react-reveal/Fade';
 
 function Card(props) {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  function handleClick(poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price, collection, color,weight,clean,diamondType) {
-    navigate(`/product`, { state: { poster1, poster2, poster3, poster4, poster5, poster6, title, body, video, price, collection, color, weight, clean, diamondType } });
-  };
+  function handleClick(title) {
+    navigate(`/product/${title}`);
+  }
 
   return (
     <Fade bottom>
-      <div style={styles.card} className="cards" onClick={() => handleClick(props.poster1, props.poster2, props.poster3, props.poster4, props.poster5, props.poster6, props.title, props.body, props.video, props.price, props.collection, props.color, props.clean, props.weight, props.diamondType)}>
+      <div style={styles.card} className="cards" onClick={() => handleClick(props.title)}>
         <img src={props.poster1} alt={props.alt} />
         <p>{props.title}</p>
         <div className='cate-content'>

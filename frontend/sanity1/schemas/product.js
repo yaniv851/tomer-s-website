@@ -16,6 +16,18 @@ export default {
             type: 'string',
         }),
         defineField({
+            title: 'Slug',
+            name: 'slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 200, // will be ignored if slugify is set
+                slugify: input => input
+                    .toLowerCase()
+                    .slice(0, 200)
+            }
+        }),
+        defineField({
             name: 'body',
             title: 'Body',
             type: 'text',
