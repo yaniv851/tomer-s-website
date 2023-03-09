@@ -1,6 +1,11 @@
 import React from "react";
 import "./style/footer.css";
 import { Icon } from "@material-ui/core";
+import HttpsIcon from '@mui/icons-material/Https';
+import { FaCcPaypal } from 'react-icons/fa';
+import { FaCcVisa } from 'react-icons/fa';
+import { FaCcMastercard } from 'react-icons/fa';
+import { FaCreditCard } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -66,21 +71,27 @@ function Footer() {
         </div>
       </div>
       <div className="under">
-          <h2 dir="rtl" className="followUS">עקבו אחרינו:</h2>
-          <div className="footcont">
+        <div className="follo">
+          <h2 dir="rtl" className="followUS">עקבו אחרינו</h2>
           <a href="https://www.instagram.com/mehabursa/" style={{ color: "#fff", marginRight: "1rem" }}>
             <Icon className="icon">
               <i className="fab fa-instagram" />
             </Icon>
           </a>
-          </div>
         </div>
+        <div className="mustIcons">
+          <Icon style={{marginRight: '5px'}}>
+            <HttpsIcon className="icon"/>
+          </Icon>
+          <FaCcPaypal className="icon"/>
+          <FaCcVisa className="icon"/>
+          <FaCcMastercard className="icon"/>
+          <FaCreditCard className="icon"/>
+        </div>
+      </div>
       <hr style={{ width: "100%" }} />
       <div className="botto-cont">
         <p>Copyright © {new Date().getFullYear()} Mehabursa</p>
-        <div className="secure-icons">
-          <i className="fas fa-lock ssl-icon"></i>
-        </div>
       </div>
     </footer>
   );

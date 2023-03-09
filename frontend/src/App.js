@@ -17,9 +17,12 @@ import Qa from "./pages/qa-an";
 import Footer from "./comps/footer";
 import Trade from "./pages/trade-in";
 import "./comps/style/socialIcons.css";
+import { IoIosCloseCircleOutline } from 'react-icons/io';
+import { AiFillPhone } from 'react-icons/ai';
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 function App() {
-  const [showIcons, setShowIcons] = useState(true);
+  const [showIcons, setShowIcons] = useState(false);
 
   const handleXmarkClick = () => {
     setShowIcons(!showIcons);
@@ -65,15 +68,15 @@ function App() {
         {showIcons && (
           <>
             <a class="social" href="https://wa.me/0523337455">
-              <i class="fab fa-whatsapp"></i>
+            <IoLogoWhatsapp className="ico"/>
             </a>
             <a class="social" href="tel:0523337455">
-              <i class="fas fa-phone"></i>
+              <AiFillPhone className="ico"/>
             </a>
           </>
         )}
-        <a class="social" onClick={handleXmarkClick}>
-          <i>X</i>
+        <a class="soc" onClick={handleXmarkClick}>
+          <IoIosCloseCircleOutline className="ico"/>
         </a>
       </div>
       <BrowserRouter>
