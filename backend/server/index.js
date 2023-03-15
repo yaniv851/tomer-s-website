@@ -5,7 +5,7 @@ const cors = require("cors");
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const CREDENTIALS = JSON.parse(fs.readFileSync('./config/secret.json'));
 const SHEET_ID = "1Cbc2cYaiACcPFyjkpN7LqFQN7l93guf4FOAE9-1IhvA";
-const port = Process.env.PORT || 3001 ;
+
 
 const getSheet = async () => {
     const doc = new GoogleSpreadsheet(SHEET_ID)
@@ -74,6 +74,6 @@ app.get('/api/data', async (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(3001, () => {
     console.log('Server started on port 3001');
 });
