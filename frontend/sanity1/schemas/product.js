@@ -28,6 +28,86 @@ export default {
             }
         }),
         defineField({
+            name: 'post1',
+            title: 'Main image',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post2',
+            title: 'poster 2',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post3',
+            title: 'poster 3',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post4',
+            title: 'poster 4',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post5',
+            title: 'poster 5',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post6',
+            title: 'poster 6',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post7',
+            title: 'poster 7',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post8',
+            title: 'poster 8',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post9',
+            title: 'poster 9',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
+            name: 'post10',
+            title: 'poster 10',
+            type: 'image',
+            options: {
+              hotspot: true,
+            },
+          }),
+        defineField({
             name: 'body',
             title: 'Body',
             type: 'text',
