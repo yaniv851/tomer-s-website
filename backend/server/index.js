@@ -26,7 +26,8 @@ const getSheet = async () => {
 
 
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://mehabursa.com' }));
 
 app.get('/api/data', async (req, res) => {
     const results = [];

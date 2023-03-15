@@ -8,7 +8,7 @@ export default function MyDropzone() {
     useEffect(() => {
         const getData = async () => {
             try {
-                const { data } = await axios.get('http://localhost:3001/api/data');
+                const { data } = await axios.get('https://tomer-websitee.onrender.com/api/data');
 
                 setData(data.results)
                                 console.log(data)

@@ -143,13 +143,13 @@ function Product() {
 
             <div className='prodcontent'>
               <h1 className="product-title-pc">{allProductData[0].title}</h1>
-              
+
               <div className='price'>
                 {allProductData[0].Price && <p>{allProductData[0].Price}₪</p>}
                 <del>{parseInt(allProductData[0].Price) + parseInt(allProductData[0].Price) * 0.25}₪</del>
               </div>
               <div className='tas'>
-                {/* {body && <pre>{body}</pre>} */}
+                {allProductData[0].body && <pre>{allProductData[0].body}</pre>}
                 <div className={`diamond-info ${isExpanded ? 'diamond-info-active' : ''}`}>
                   <h3 onClick={() => handleExpandClick(0)}>
                     {isExpanded ? 'סגור מידע' : 'למידע נוסף'}
