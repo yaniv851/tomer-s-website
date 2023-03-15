@@ -5,14 +5,18 @@ export default function MyDropzone() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/api/data')
-            .then(response => {
-                console.log(response.data);
-                setData(response.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        const getData = async () => {
+            try {
+                const { data } = await axios.get('http://localhost:3001/api/data');
+
+                setData(data.results)
+                                console.log(data)
+            } catch (err) {
+                console.log(err)
+            }
+        }
+
+        getData()
     }, []);
 
     return (
@@ -27,7 +31,7 @@ export default function MyDropzone() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((row, index) => (
+                    {data?.map((row, index) => (
                         <tr key={index}>
                             <td>{row['כותרת']}</td>
                             <td>{row['מחיר']}</td>

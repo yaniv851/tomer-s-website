@@ -64,7 +64,7 @@ function App() {
           </div>
         </nav>
       </div>
-      <div class="wrapi">
+      <div className="wrapi">
         {showIcons && (
           <>
             <a class="social" href="https://wa.me/0523337455">
@@ -75,7 +75,7 @@ function App() {
             </a>
           </>
         )}
-        <a class="soc" onClick={handleXmarkClick}>
+        <a className="soc" onClick={handleXmarkClick}>
           <IoIosCloseCircleOutline className="ico"/>
         </a>
       </div>
