@@ -39,10 +39,12 @@ app.get('/api/data', async (req, res) => {
         const data = rows[i];
         const title = data.כותרת;
 
-        if (existingTitles.has(title)) {
-            console.log(`Product with title ${title} already in results, skipping`);
-        } else {
-            existingTitles.add(title);
+        // so how many can you afford to pay? i will ask for $35 ok how much is it in shekels 10 you already paid on order....i mean 37 on your currency right?yes, send me how much is it in shekels(35$) may be 70-80. you can send as a tip on the order completation
+        // if (existingTitles.has(title)) {
+        //     // here you can match the duplicate otherwise all result
+        //     console.log(`Product with title ${title} already in results, skipping`);
+        // } else {
+        //     existingTitles.add(title);
             results.push({
                 title: data.כותרת,
                 body: data.תיאור,
@@ -65,7 +67,7 @@ app.get('/api/data', async (req, res) => {
                 price: data.מחיר,
             });
         }
-    }
+    // }
 
     res.status(200).json({ results })
 })

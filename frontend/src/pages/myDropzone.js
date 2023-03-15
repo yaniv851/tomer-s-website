@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./styles/myDropzone.css";
 
 export default function MyDropzone() {
     const [data, setData] = useState([]);
@@ -20,21 +21,26 @@ export default function MyDropzone() {
     }, []);
 
     return (
-        <div>
-            <h1>Data from CSV</h1>
-            <table>
+        <div dir='rtl'>
+            <h1>דאטא מקובץ סי אס וי</h1>
+            <table style={{ borderCollapse: 'collapse'}}>
                 <thead>
                     <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
-                        <th>Column 3</th>
+                        <th>מספר שורה</th>
+                        <th>כותרת</th>
+                        <th>מחיר</th>
+                        <th>תיאור</th>
+                        <th>פוסט 1</th>
                     </tr>
                 </thead>
                 <tbody>
                     {data?.map((row, index) => (
                         <tr key={index}>
-                            <td>{row['כותרת']}</td>
-                            <td>{row['מחיר']}</td>
+                            <td>{index}</td>
+                            <td>{row['title']}</td>
+                            <td>{row['price']}</td>
+                            <td>{row['body']}</td>
+                            <td>{row['poster1']}</td>
                         </tr>
                     ))}
                 </tbody>
