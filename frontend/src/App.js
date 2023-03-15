@@ -74,10 +74,10 @@ function App() {
       <div className="wrapi">
         {showIcons && (
           <>
-            <a class="social" href="https://wa.me/0523337455">
+            <a className="social" href="https://wa.me/0523337455">
               <IoLogoWhatsapp className="ico" />
             </a>
-            <a class="social" href="tel:0523337455">
+            <a className="social" href="tel:0523337455">
               <AiFillPhone className="ico" />
             </a>
           </>
