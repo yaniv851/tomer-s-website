@@ -8,6 +8,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 function Product() {
   const { title } = useParams();
   const [allProductData, setAllProducts] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null); // new state variable for selected color
   useEffect(() => {
     sanityClient
       .fetch(
@@ -33,42 +34,6 @@ function Product() {
       .then((data) => setAllProducts(data))
       .catch(console.error);
   }, [title]);
-
-
-  // const location = useLocation();
-  // const queryParams = new URLSearchParams(location.search);
-  // const title = queryParams.get('title');
-  // const body = queryParams.get('body');
-  // const video = queryParams.get('video') !== 'null' ? queryParams.get('video') : null;
-  // const poster1 = queryParams.get('poster1') !== 'null' ? queryParams.get('poster1') : null;
-  // const poster2 = queryParams.get('poster2') !== 'null' ? queryParams.get('poster2') : null;
-  // const poster3 = queryParams.get('poster3') !== 'null' ? queryParams.get('poster3') : null;
-  // const poster4 = queryParams.get('poster4') !== 'null' ? queryParams.get('poster4') : null;
-  // const poster5 = queryParams.get('poster5') !== 'null' ? queryParams.get('poster5') : null;
-  // const poster6 = queryParams.get('poster6') !== 'null' ? queryParams.get('poster6') : null;
-  // const price = queryParams.get('price') !== 'null' ? queryParams.get('price') : null;
-  // const collection = queryParams.get('collection') !== 'null' ? queryParams.get('collection') : null;
-  // const color = queryParams.get('color') !== 'null' ? queryParams.get('color') : null;
-  // const weight = queryParams.get('weight') !== 'null' ? queryParams.get('weight') : null;
-  // const clean = queryParams.get('clean') !== 'null' ? queryParams.get('clean') : null;
-  // const diamondType = queryParams.get('diamondType') !== 'null' ? queryParams.get('diamondType') : null;
-
-  // const poster1 = location.state ? location.state.poster1 : null;
-  // const poster2 = location.state ? location.state.poster2 : null;
-  // const poster3 = location.state ? location.state.poster3 : null;
-  // const poster4 = location.state ? location.state.poster4 : null;
-  // const poster5 = location.state ? location.state.poster5 : null;
-  // const poster6 = location.state ? location.state.poster6 : null;
-  // const title = location.state ? location.state.title : null;
-  // const body = location.state ? location.state.body : null;
-  // const video = location.state ? location.state.video : null;
-  // const price = location.state ? location.state.price : null;
-  // const collection = location.state ? location.state.collection : null;
-  // const color = location.state ? location.state.color : null;
-  // const weight = location.state ? location.state.weight : null;
-  // const clean = location.state ? location.state.clean : null;
-  // const diamondType = location.state ? location.state.diamondType : null;
-
 
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -150,11 +115,17 @@ function Product() {
               </div>
               <div className='tas'>
                 {allProductData[0].body && <pre>{allProductData[0].body}</pre>}
+                <pre style={{ fontWeight: 500, marginBottom: 4, fontSize: '20px' }}>בחר צבע</pre>
+                <div className='color-input'>
+                  <button style={{ background: "linear-gradient(70deg, #BF953F, #B38728, #FBF5B7, #AA771C)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
+                  <button style={{ background: "linear-gradient(70deg, #CC988D, #CC988D, #F0DEDA, #CC988D)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
+                  <button style={{ background: "linear-gradient(70deg, #929292, #E1E1E1, #fff, #929292)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
+                </div>
                 <div className={`diamond-info ${isExpanded ? 'diamond-info-active' : ''}`}>
                   <h3 onClick={() => handleExpandClick(0)}>
                     {isExpanded ? 'סגור מידע' : 'למידע נוסף'}
-                    <span className={`accordion-arrow ${activeIndex === 0 && "accordion-arrow-active"} ${rotateArrow && "rotate"}`}>
-                      <KeyboardArrowDownIcon />
+                    <span className={`accordion-arrow ${activeIndex === 0 && "accordion-arrow-active"}`}>
+                      <KeyboardArrowDownIcon className={rotateArrow ? 'rotate' : ''} />
                     </span>
                   </h3>
                   {isExpanded && (

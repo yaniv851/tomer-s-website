@@ -135,6 +135,16 @@
     flex-direction: row-reverse;
 }
 
+.color-input button{
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.color-input button:hover{
+    scale: 1.1;
+    transition: 0.7s;
+}
+
 .diamond-info {
     width: 70%;
     margin-bottom: 20px;
