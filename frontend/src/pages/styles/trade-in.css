@@ -1,0 +1,15 @@
+.cont-c h1{
+    position: relative;
+    display: inline-block;
+}
+
+.cont-c h1::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 2px;
+    background: #B07612;
+    bottom: -25px;
+    margin-left: -30px;
+  }
