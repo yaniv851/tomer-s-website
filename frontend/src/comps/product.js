@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import sanityClient from "../client2";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
@@ -7,8 +7,10 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 function Product() {
   const { title } = useParams();
+  const [popupVisible, setPopupVisible] = useState(false);
   const [allProductData, setAllProducts] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null); // new state variable for selected color
+  const [selectedColor, setSelectedColor] = useState('זהב'); // new state variable for selected color
+  const [selectedMeasure, setSelectedMeasure] = useState(null);
   useEffect(() => {
     sanityClient
       .fetch(
@@ -63,8 +65,15 @@ function Product() {
     setSelectedPoster(poster);
   };
 
+  function togglePopup() {
+    setPopupVisible(!popupVisible);
+  }
+
 
   const videoSrc = allProductData && allProductData[0].video && allProductData[0].video.match(/\.(mp4|webm)$/) ? allProductData[0].video : null;
+
+  // Check if title contains the word 'טבעת' and if collection contains the word 'טבעות'
+  const showMeasureButton = allProductData && (/(טבעת)/.test(allProductData[0].title) || /(טבעות)/.test(allProductData[0].collection));
 
   return (
     <div className='product' dir='rtl'>
@@ -117,10 +126,48 @@ function Product() {
                 {allProductData[0].body && <pre>{allProductData[0].body}</pre>}
                 <pre style={{ fontWeight: 500, marginBottom: 4, fontSize: '20px' }}>בחר צבע</pre>
                 <div className='color-input'>
-                  <button style={{ background: "linear-gradient(70deg, #BF953F, #B38728, #FBF5B7, #AA771C)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
-                  <button style={{ background: "linear-gradient(70deg, #CC988D, #CC988D, #F0DEDA, #CC988D)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
-                  <button style={{ background: "linear-gradient(70deg, #929292, #E1E1E1, #fff, #929292)", border: 'none', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}></button>
+                  <button title="זהב" style={{ background: "linear-gradient(70deg, #BF953F, #B38728, #FBF5B7, #AA771C)", border: selectedColor === "זהב" ? '1.5px solid #454343' : '1.5px solid #f0f0f0', width: '40px', height: '40px', transition: 'border 1s', borderRadius: '20px', marginRight: 5 }}
+                    onClick={() => setSelectedColor("זהב")}
+                  >
+                  </button>
+                  <button title="זהב ורוד" style={{ background: "linear-gradient(70deg, #CC988D, #CC988D, #F0DEDA, #CC988D)", border: selectedColor === "זהב ורוד" ? '1.5px solid #454343' : '1.5px solid #f0f0f0', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}
+                    onClick={() => setSelectedColor("זהב ורוד")}
+                  ></button>
+                  <button title="זהב לבן" style={{ background: "linear-gradient(70deg, #929292, #E1E1E1, #fff, #929292)", border: selectedColor === "זהב לבן" ? '1.5px solid #454343' : '1.5px solid #f0f0f0', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}
+                    onClick={() => setSelectedColor("זהב לבן")}
+                  >
+                  </button>
                 </div>
+                {showMeasureButton && <button className='measurebtn' style={{ marginTop: 10, padding: 5 }} onClick={togglePopup}>בחר מידה</button>}
+                {popupVisible &&
+                  <div className="popup" dir='rtl'>
+                    <h2>מידות</h2>
+                    <div className='measuresbtns' dir='ltr'>
+                      <button>44/US</button>
+                      <button>45/US</button>
+                      <button>46/US</button>
+                      <button>47/US</button>
+                      <button>48/US</button>
+                      <button>49/US</button>
+                      <button>50/US</button>
+                      <button>51/US</button>
+                      <button>52/US</button>
+                      <button>53/US</button>
+                      <button>54/US</button>
+                      <button>55/US</button>
+                      <button>56/US</button>
+                      <button>57/US</button>
+                      <button>58/US</button>
+                      <button>59/US</button>
+                      <button>60/US</button>
+                      <button>61/US</button>
+                      <button>62/US</button>
+                      <button>63/US</button>
+                      <button>64/US</button>
+                      <button>65/US</button>
+                      <button>66/US</button>
+                    </div>
+                  </div>}
                 <div className={`diamond-info ${isExpanded ? 'diamond-info-active' : ''}`}>
                   <h3 onClick={() => handleExpandClick(0)}>
                     {isExpanded ? 'סגור מידע' : 'למידע נוסף'}
