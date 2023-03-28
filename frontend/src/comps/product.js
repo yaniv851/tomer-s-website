@@ -126,7 +126,7 @@ function Product() {
                 {allProductData[0].body && <pre>{allProductData[0].body}</pre>}
                 <pre style={{ fontWeight: 500, marginBottom: 4, fontSize: '20px' }}>בחר צבע</pre>
                 <div className='color-input'>
-                  <button title="זהב" style={{ background: "linear-gradient(70deg, #BF953F, #B38728, #FBF5B7, #AA771C)", border: selectedColor === "זהב" ? '1.5px solid #454343' : '1.5px solid #f0f0f0', width: '40px', height: '40px', transition: 'border 1s', borderRadius: '20px', marginRight: 5 }}
+                  <button title="זהב" style={{ background: "linear-gradient(70deg, #BF953F, #B38728, #FBF5B7, #AA771C)", border: selectedColor === "זהב" ? '1.5px solid #454343' : '1.5px solid #f0f0f0', width: '40px', height: '40px', borderRadius: '20px', marginRight: 5 }}
                     onClick={() => setSelectedColor("זהב")}
                   >
                   </button>
