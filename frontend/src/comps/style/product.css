@@ -215,7 +215,7 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
     /* Need a specific value to work */
     z-index: 200;
     border-radius: 10px;
@@ -234,7 +234,7 @@
 
 .popup .measuresbtns {
     display: grid;
-    grid-template-columns: 50px 50px 50px 50px 50px;
+    grid-template-columns: 100px 100px 100px 100px;
     column-gap: 20px;
     row-gap: 20px;
     align-items: center;
@@ -243,7 +243,7 @@
 }
 
 .popup .measuresbtns button {
-    width: 60px;
+    width: 100px;
     height: 25px;
     border-radius: 10px;
     border: none;
@@ -327,6 +327,33 @@
         display: inline-block;
         margin-right: 20px;
         text-align: left;
+    }
+
+    .popup {
+        width: 350px;
+        overflow-y: scroll;
+        height: 200px;
+        top: 20%;
+    }
+
+    .popup::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .popup::-webkit-scrollbar-thumb{
+        background: #B07612;
+        border-radius: 10px;
+    }
+
+    .popup .measuresbtns {
+        grid-template-columns: 90px 90px 90px;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .popup .measuresbtns button {
+        width: 90px;
+        height: 25px;
     }
 }
 

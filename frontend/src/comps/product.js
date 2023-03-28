@@ -9,7 +9,7 @@ function Product() {
   const { title } = useParams();
   const [popupVisible, setPopupVisible] = useState(false);
   const [allProductData, setAllProducts] = useState(null);
-  const [selectedColor, setSelectedColor] = useState('זהב'); // new state variable for selected color
+  const [selectedColor, setSelectedColor] = useState('זהב לבן'); // new state variable for selected color
   const [selectedMeasure, setSelectedMeasure] = useState(null);
   useEffect(() => {
     sanityClient
@@ -143,29 +143,32 @@ function Product() {
                   <div className="popup" dir='rtl'>
                     <h2>מידות</h2>
                     <div className='measuresbtns' dir='ltr'>
-                      <button>44/US</button>
-                      <button>45/US</button>
-                      <button>46/US</button>
-                      <button>47/US</button>
-                      <button>48/US</button>
-                      <button>49/US</button>
-                      <button>50/US</button>
-                      <button>51/US</button>
-                      <button>52/US</button>
-                      <button>53/US</button>
-                      <button>54/US</button>
-                      <button>55/US</button>
-                      <button>56/US</button>
-                      <button>57/US</button>
-                      <button>58/US</button>
-                      <button>59/US</button>
-                      <button>60/US</button>
-                      <button>61/US</button>
-                      <button>62/US</button>
-                      <button>63/US</button>
-                      <button>64/US</button>
-                      <button>65/US</button>
-                      <button>66/US</button>
+                      <button>38EU/0.5US</button>
+                      <button>39EU/1US</button>
+                      <button>40EU/1.5US</button>
+                      <button>42EU/2US</button>
+                      <button>43EU/2.5US</button>
+                      <button>44EU/3US</button>
+                      <button>45EU/3.5US</button>
+                      <button>47EU/4US</button>
+                      <button>48EU/4.5US</button>
+                      <button>49EU/5US</button>
+                      <button>50EU/5.5US</button>
+                      <button>51EU/6US</button>
+                      <button>52EU/6.5US</button>
+                      <button>54EU/7US</button>
+                      <button>55EU/7.5US</button>
+                      <button>56EU/8US</button>
+                      <button>58EU/8.5US</button>
+                      <button>59EU/9US</button>
+                      <button>60EU/9.5US</button>
+                      <button>61EU/10US</button>
+                      <button>63EU/10.5US</button>
+                      <button>64EU/11US</button>
+                      <button>65EU/11.5US</button>
+                      <button>67EU/12US</button>
+                      <button>68EU/12.5US</button>
+                      <button>69EU/13US</button>
                     </div>
                   </div>}
                 <div className={`diamond-info ${isExpanded ? 'diamond-info-active' : ''}`}>
@@ -213,7 +216,7 @@ function Product() {
 
                         // Get the product description
                         const description = details.purchase_units[0].description;
-
+                        
                       });
                     }}
                   />

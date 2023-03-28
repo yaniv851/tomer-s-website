@@ -88,6 +88,8 @@ function CardContainer() {
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
   };
+
+  
   return (
     <div className='column'>
       <div className='row' style={{ textAlign: "center" }} dir="rtl">
