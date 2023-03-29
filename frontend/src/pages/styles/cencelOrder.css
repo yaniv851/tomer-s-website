@@ -1,0 +1,89 @@
+.wrapwra{
+    width: 100%;
+}
+
+.wrapwra .realhead h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.wrapwra .realhead h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #B07612;
+    margin-bottom: 30px;
+
+}
+
+
+
+.cencelForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.cencelForm input {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: 2px solid #fff;
+    transition: 1s;
+    outline: none;
+    border-radius: 10px;
+}
+
+.cencelForm input:focus {
+    border: 2px solid #B07612;
+    transition: 1s;
+    outline: none;
+}
+
+.cencelForm .messegeinp {
+    height: 50px;
+}
+
+.cencelForm .messegeinp::placeholder {
+    font-size: 12px;
+    top: 10%;
+    position: absolute;
+}
+
+.cencelForm input[type=submit] {
+    background-color: #B07612;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    transition: 1s;
+    outline: none;
+}
+
+.cencelForm input[type=submit]:hover {
+    scale: 1.1;
+    transition: 1s;
+}
+
+.contentwrap{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.contentwrap .more{
+    margin-right: 40px;
+}
+
+.contentwrap .more h3{
+    margin: 0;
+    font-weight: 300;
+}
+
+.contentwrap .more a{
+    color: #B07612;
+    text-decoration: none;
+}

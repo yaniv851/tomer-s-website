@@ -26,6 +26,7 @@ import { FaCcVisa } from 'react-icons/fa';
 import { FaCcMastercard } from 'react-icons/fa';
 import { FaCreditCard } from 'react-icons/fa';
 import "./comps/style/footer.css";
+import Cencel from "./pages/cencelOrder";
 
 
 function App() {
@@ -89,8 +90,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} exact />
-          <Route path="article" element={<Article />} />
-          <Route path="about" element={<Accordion />} />
+          <Route path="/article" element={<Article />} />
+          <Route path="/about" element={<Accordion />} />
           <Route path="/product/:title" element={<Product />} />
           <Route path="/takanon1" element={<T1 />} />
           <Route path="/takanon2" element={<T2 />} />
@@ -103,6 +104,7 @@ function App() {
           <Route path="/vali" element={<MyDropzone />} />
           <Route path="/answers" element={<Qa />} />
           <Route path="/trade" element={<Trade />} />
+          <Route path="/DealCancellation" element={<Cencel />} />
         </Routes>
       </BrowserRouter>
 
