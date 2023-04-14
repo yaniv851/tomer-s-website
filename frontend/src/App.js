@@ -8,6 +8,7 @@ import T1 from "./pages/takanon/t1";
 import T2 from "./pages/takanon/t2";
 import T3 from "./pages/takanon/t3";
 import T4 from "./pages/takanon/t4";
+import "./App.css";
 import T5 from "./pages/takanon/t5";
 import T6 from "./pages/takanon/t6";
 import Blogs from "./pages/blogs";
@@ -27,6 +28,7 @@ import { FaCcMastercard } from 'react-icons/fa';
 import { FaCreditCard } from 'react-icons/fa';
 import "./comps/style/footer.css";
 import Cencel from "./pages/cencelOrder";
+import Cate from "./pages/categories";
 
 
 function App() {
@@ -41,7 +43,7 @@ function App() {
         position: "relative", top: 0,
         display: "flex", justifyContent: "center", alignItems: "center", backgroundColor: "black", width: "100%", height: "100px"
       }}>
-        <h2 style={{ color: "white" }}>מהבורסה</h2>
+        <h2 className="tit" style={{ color: "white" }}>מהבורסה</h2>
         <img src="/images/logo.jpeg" style={{ width: "100px" }} />
         {/* <button className="login" style={{ transition: "1s", position: "absolute", right: "10%", width: "100px", borderRadius: 20, border: "none", backgroundColor: "#B07612", height: "30px", color: "white" }}>התחבר<i style={{ marginLeft: "5px" }} className="fa fa-user"></i></button> */}
       </div>
@@ -105,6 +107,7 @@ function App() {
           <Route path="/answers" element={<Qa />} />
           <Route path="/trade" element={<Trade />} />
           <Route path="/DealCancellation" element={<Cencel />} />
+          <Route path="/categories/:categoryName" element={<Cate />} />
         </Routes>
       </BrowserRouter>
 
@@ -120,7 +123,7 @@ function App() {
               <a>
                 <p>שאלות ותשובות</p>
               </a>
-              <a>
+              <a href="/DealCancellation">
                 <p>ביטול הזמנה</p>
               </a>
             </div>

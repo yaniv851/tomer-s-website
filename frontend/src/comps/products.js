@@ -98,33 +98,34 @@ function CardContainer() {
   const rows = Array.from(Array(maxRow), (_, index) => index + 1);
 
   return (
-    <div className='column' style={{marginBottom: '30px'}}> 
-      <h1 dir='rtl' style={{ fontWeight: 400, textAlign: "center"  }}>הנמכרים ביותר:</h1>
+    <div className='column' style={{ marginBottom: '30px' }}>
+      <h1 dir='rtl' style={{ fontWeight: 400, textAlign: "center" }}>הנמכרים ביותר:</h1>
       {rows.map(row => (
-        <div key={row} className='row' dir="rtl"  style={{ textAlign: "center" }}>
+        <div key={row} className='row' dir="rtl" style={{ textAlign: "center" }}>
           <div style={styles.cardContainer} className="cardContainer" dir="ltr">
             {allProductData &&
-              allProductData.filter(product => product.row === row).map((product, index) => (
-                <Card
-                  key={index}
-                  video={product.video}
-                  poster1={product.poster1}
-                  poster2={product.poster2}
-                  poster3={product.poster3}
-                  poster4={product.poster4}
-                  poster5={product.poster5}
-                  poster6={product.poster6}
-                  alt={product.poster1}
-                  title={product.title}
-                  body={product.body}
-                  collection={product.collection}
-                  weight={product.weight}
-                  clean={product.clean}
-                  diamondType={product.diamondType}
-                  color={product.color}
-                  price={`${product.Price}`}
-                />
-              ))
+              allProductData.filter(product => true)
+                .map((product, index) => (
+                  <Card
+                    key={index}
+                    video={product.video}
+                    poster1={product.poster1}
+                    poster2={product.poster2}
+                    poster3={product.poster3}
+                    poster4={product.poster4}
+                    poster5={product.poster5}
+                    poster6={product.poster6}
+                    alt={product.poster1}
+                    title={product.title}
+                    body={product.body}
+                    collection={product.collection}
+                    weight={product.weight}
+                    clean={product.clean}
+                    diamondType={product.diamondType}
+                    color={product.color}
+                    price={`${product.Price}`}
+                  />
+                ))
             }
           </div>
         </div>

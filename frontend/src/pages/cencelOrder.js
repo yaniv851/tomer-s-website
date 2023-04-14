@@ -20,7 +20,7 @@ export default function Cencel() {
                     <h3>ניתן לבטל את ההזמנה גם בדרכים הבאות:</h3>
                     <p>מייל: <a href="mailto:mehabursaleyaalomim@gmail.com">mehabursaleyaalomim@gmail.com</a></p>
                     <p>טלפון: <a href="tel:0543337455">0523337455</a></p>
-                    <span style={{fontWeight: '800'}}>מעבדת שירות ארצית שוכנת ברחוב דרך העצמאות 48 יהוד.</span>
+                    <span style={{fontWeight: '800'}}>משרדינו שוכנים ברחוב ז'בוטינסקי 3 רמת גן.</span>
                 </div>
             </div>
         </div>

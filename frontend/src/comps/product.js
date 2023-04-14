@@ -69,7 +69,7 @@ function Product() {
     setPopupVisible(!popupVisible);
   }
 
-  const [totalPrice, setTotalPrice] = useState(allProductData[0].Price);
+  const [totalPrice, setTotalPrice] = useState(allProductData?.[0]?.Price);
 
 
   const videoSrc = allProductData && allProductData[0].video && allProductData[0].video.match(/\.(mp4|webm)$/) ? allProductData[0].video : null;
@@ -203,8 +203,8 @@ function Product() {
                       return actions.order.create({
                         purchase_units: [
                           {
-                            amount: { value: allProductData[0].Price },
-                            description: title, // Add product name as description
+                            amount: { value: allProductData?.[0]?.Price },
+                            description: `${allProductData[0].title} צבע ${selectedColor}`
                           }
                         ]
                       });
@@ -215,10 +215,6 @@ function Product() {
                         // Get the order ID
                         const orderID = details.id;
                         setOrderID(orderID);
-
-                        // Get the product description
-                        const description = details.purchase_units[0].description;
-                        
                       });
                     }}
                   />
