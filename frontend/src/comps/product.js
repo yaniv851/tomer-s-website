@@ -77,6 +77,13 @@ function Product() {
   // Check if title contains the word 'טבעת' and if collection contains the word 'טבעות'
   const showMeasureButton = allProductData && (/(טבעת)/.test(allProductData[0].title) || /(טבעות)/.test(allProductData[0].collection));
 
+  const PLAN_ID = "your-plan-id";
+  const createSubscription = (data, actions) => {
+    return actions.subscription.create({
+      plan_id: PLAN_ID,
+    });
+  };
+
   return (
     <div className='product' dir='rtl'>
       <h1 className="product-title-mobile">{allProductData && allProductData[0].title}</h1>
@@ -143,6 +150,9 @@ function Product() {
                 {showMeasureButton && <button className='measurebtn' style={{ marginTop: 10, padding: 5 }} onClick={togglePopup}>בחר מידה</button>}
                 {popupVisible &&
                   <div className="popup" dir='rtl'>
+                    <button className='close-btn'>
+                      <span>&times;</span>
+                    </button>
                     <h2>מידות</h2>
                     <div className='measuresbtns' dir='ltr'>
                       <button>38EU/0.5US</button>
@@ -218,7 +228,27 @@ function Product() {
                       });
                     }}
                   />
+
+                  <h2>להשכרת תכשיטים:</h2>
+                  <PayPalButtons
+                    createSubscription={(data, actions) => {
+                      return actions.subscription.create({
+                        plan_id: "P-2AH10986XT888271SMRGUHRQ"
+                      });
+                    }}
+                    onApprove={(data, actions) => {
+                      alert(data.subscriptionID);
+                    }}
+                    style={{
+                      shape: "pill",
+                      color: "blue",
+                      layout: "vertical",
+                      label: "paypal"
+                    }}
+                  />
                 </PayPalScriptProvider>
+
+
               </div>
             </div>
           </div>

@@ -75,7 +75,7 @@ function App() {
         </nav>
       </div>
       <div className="wrapi">
-        {showIcons && (
+        {/* {showIcons && (
           <>
             <a className="social" href="https://wa.me/0523337455">
               <IoLogoWhatsapp className="ico" />
@@ -87,7 +87,7 @@ function App() {
         )}
         <a className="soc" onClick={handleXmarkClick}>
           <IoIosCloseCircleOutline className="ico" />
-        </a>
+        </a> */}
       </div>
       <BrowserRouter>
         <Routes>
@@ -195,6 +195,7 @@ function App() {
         <hr style={{ width: "100%" }} />
         <div className="botto-cont">
           <p>Copyright © {new Date().getFullYear()} Mehabursa</p>
+          <img src='/images/IGI.webp'/>
         </div>
       </footer>
     </div>

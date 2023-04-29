@@ -31,6 +31,23 @@ function Card(props) {
             )
         }
 
+    if (props.categoryName == "תליונים")
+        if (props.title && props.title.includes("תליון") ||
+            props.collection && props.collection.includes("תליון")) {
+            return (
+                <Fade bottom>
+                    <div style={styles.card} className="cards" onClick={() => handleClick(props.title)}>
+                        <img src={props.poster1} alt={props.alt} />
+                        <p>{props.title}</p>
+                        <div className='cate-content'>
+                            <button className='cardbtn'>קנה עכשיו</button>
+                            <p className='price' style={styles.price}>{props.price}₪</p>
+                        </div>
+                    </div>
+                </Fade>
+            )
+        }
+
     if (props.categoryName == "צמידים")
         if (props.title && props.title.includes("צמיד") ||
             props.collection && props.collection.includes("צמיד")) {
@@ -47,6 +64,24 @@ function Card(props) {
                 </Fade>
             )
         }
+
+    if (props.categoryName == "טבעות אירוסין")
+        if (props.title && props.title.includes("טבעת אירוסין") ||
+            props.collection && props.collection.includes("אירוסין")) {
+            return (
+                <Fade bottom>
+                    <div style={styles.card} className="cards" onClick={() => handleClick(props.title)}>
+                        <img src={props.poster1} alt={props.alt} />
+                        <p>{props.title}</p>
+                        <div className='cate-content'>
+                            <button className='cardbtn'>קנה עכשיו</button>
+                            <p className='price' style={styles.price}>{props.price}₪</p>
+                        </div>
+                    </div>
+                </Fade>
+            )
+        }
+
     if (props.categoryName == "תכשיטים עד 1900₪")
         if (props.price && props.price < 1900) {
             return (
@@ -135,34 +170,35 @@ export default function Cate() {
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <h1>{categoryName}</h1>
-
-            {allProductData &&
-                allProductData
-                    .map((product, index) => (
-                        <Card
-                            key={index}
-                            video={product.video}
-                            poster1={product.poster1}
-                            poster2={product.poster2}
-                            poster3={product.poster3}
-                            poster4={product.poster4}
-                            poster5={product.poster5}
-                            poster6={product.poster6}
-                            alt={product.poster1}
-                            title={product.title}
-                            body={product.body}
-                            collection={product.collection}
-                            weight={product.weight}
-                            clean={product.clean}
-                            diamondType={product.diamondType}
-                            color={product.color}
-                            price={`${product.Price}`}
-                            categoryName={categoryName}
-                        />
-                    ))
-            }
+            <div style={{ textAlign: "center", alignItems: 'center', justifyContent: 'center', display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px" }}>
+                {allProductData &&
+                    allProductData
+                        .map((product, index) => (
+                            <Card
+                                key={index}
+                                video={product.video}
+                                poster1={product.poster1}
+                                poster2={product.poster2}
+                                poster3={product.poster3}
+                                poster4={product.poster4}
+                                poster5={product.poster5}
+                                poster6={product.poster6}
+                                alt={product.poster1}
+                                title={product.title}
+                                body={product.body}
+                                collection={product.collection}
+                                weight={product.weight}
+                                clean={product.clean}
+                                diamondType={product.diamondType}
+                                color={product.color}
+                                price={`${product.Price}`}
+                                categoryName={categoryName}
+                            />
+                        ))
+                }
+            </div>
         </div>
     )
 }

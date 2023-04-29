@@ -3,8 +3,6 @@ import "./style/homeSlider.css";
 import sanityClient from "../client2";
 
 
-
-
 export default function Slider() {
   const [currentImage, setCurrentImage] = useState(0);
   const [currentText, setCurrentText] = useState(0);
@@ -45,6 +43,7 @@ export default function Slider() {
           }
         },
         body,
+        link
       }`
       )
       .then((data) => {
@@ -52,6 +51,7 @@ export default function Slider() {
           source: header.post1.asset.url,
           productTitle: header.ProductName,
           body: header.body,
+          gink: header.link,
         }));
         setAllHeaders(newImages);
       })
@@ -73,10 +73,14 @@ export default function Slider() {
         <img className="ifsa" src={allHeaders[currentImage].source} />
       )}
       {allHeaders && (
-        <div dir="rtl" className="content" style={{ marginRight: "150px" }}>
+        <div dir="rtl" className="content">
           <h2>{allHeaders[currentText].productTitle}</h2>
           <p className="banne">{allHeaders[currentText].body}</p>
-          <button className="btn-log hover-white">קנה עכשיו</button>
+          <button className="btn-log hover-white" onClick={(event) => {
+            window.open(allHeaders[currentText].gink, "_blank");
+          }}>
+            קנה עכשיו
+          </button>
         </div>
       )}
       <div
