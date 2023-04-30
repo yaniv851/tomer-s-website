@@ -79,7 +79,7 @@ export default function Slider() {
           <button className="btn-log hover-white" onClick={(event) => {
             window.open(allHeaders[currentText].gink, "_blank");
           }}>
-            קנה עכשיו
+             ראה עוד
           </button>
         </div>
       )}

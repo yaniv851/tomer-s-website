@@ -14,6 +14,7 @@ import T6 from "./pages/takanon/t6";
 import Blogs from "./pages/blogs";
 import Blog from "./pages/blog";
 import MyDropzone from "./pages/myDropzone";
+import { FaWhatsapp } from "react-icons/fa";
 import Qa from "./pages/qa-an";
 import Trade from "./pages/trade-in";
 import "./comps/style/socialIcons.css";
@@ -37,6 +38,11 @@ function App() {
   const handleXmarkClick = () => {
     setShowIcons(!showIcons);
   }
+
+  const handleWhatsappClick = () => {
+    window.open('https://wa.me/1234567890', '_blank');
+  };
+
   return (
     <div className="wrapper">
       <div style={{
@@ -110,6 +116,11 @@ function App() {
           <Route path="/categories/:categoryName" element={<Cate />} />
         </Routes>
       </BrowserRouter>
+
+
+      <div className="floating-whatsapp-button" onClick={handleWhatsappClick}>
+        <FaWhatsapp size={32} />
+      </div>
 
       {/* <Footer /> */}
       <footer style={{ backgroundColor: "#333", color: "#fff", padding: "1rem" }}>
@@ -195,7 +206,7 @@ function App() {
         <hr style={{ width: "100%" }} />
         <div className="botto-cont">
           <p>Copyright © {new Date().getFullYear()} Mehabursa</p>
-          <img src='/images/IGI.webp'/>
+          <img src='/images/IGI.webp' />
         </div>
       </footer>
     </div>
