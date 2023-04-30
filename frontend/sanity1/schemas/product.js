@@ -202,6 +202,11 @@ export default {
       title: 'מספר שורה',
       type: 'number',
     },
+    {
+      name: 'column',
+      title: 'מספר טור',
+      type: 'number',
+    },
 
   ]
 }
