@@ -15,7 +15,7 @@ function Card(props) {
 
   return (
     <Fade bottom>
-      <div style={styles.card} className="cards" onClick={() => handleClick(props.title)}>
+      <div style={{ ...styles.card, gridColumn: props.column, gridRow: props.row }} className="cards" onClick={() => handleClick(props.title)}>
         <img src={props.poster1} alt={props.alt} />
         <p>{props.title}</p>
         <div className='cate-content'>
@@ -60,7 +60,8 @@ function CardContainer() {
           diamondType,
           Price,
           row,
-        } | order(row asc)`
+          column,
+        } | order(row asc, column asc)`
       )
       .then((data) => {
         setAllProducts(data);
@@ -96,6 +97,9 @@ function CardContainer() {
   // create an array of rows based on the maximum row number in the products
   const maxRow = allProductData ? Math.max(...allProductData.map(product => product.row)) : 0;
   const rows = Array.from(Array(maxRow), (_, index) => index + 1);
+  const maxColumns = 3;
+  const column = allProductData && allProductData.map(product => product.column);
+  console.log(column);
 
   return (
     <div className='column' style={{ marginBottom: '30px' }}>
@@ -104,7 +108,7 @@ function CardContainer() {
         <div key={row} className='row' dir="rtl" style={{ textAlign: "center" }}>
           <div style={styles.cardContainer} className="cardContainer" dir="ltr">
             {allProductData &&
-              allProductData.filter(product => true)
+              allProductData
                 .map((product, index) => (
                   <Card
                     key={index}
@@ -124,6 +128,8 @@ function CardContainer() {
                     diamondType={product.diamondType}
                     color={product.color}
                     price={`${product.Price}`}
+                    column={product.column} // assign a column number only if it exists
+                    row={product.row}
                   />
                 ))
             }
