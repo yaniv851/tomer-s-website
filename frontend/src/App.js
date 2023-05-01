@@ -206,7 +206,10 @@ function App() {
         <hr style={{ width: "100%" }} />
         <div className="botto-cont">
           <p>Copyright © {new Date().getFullYear()} Mehabursa</p>
-          <img src='/images/IGI.webp' />
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <img src='/images/IGI.webp' style={{ objectFit: 'contain', width: 70 }} />
+            <img src='/images/gia.webp' style={{ objectFit: 'contain', width: 70 }} />
+          </div>
         </div>
       </footer>
     </div>
