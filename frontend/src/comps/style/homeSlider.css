@@ -23,10 +23,29 @@
   display: flex;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  font-size: larger;
   flex-direction: column;
   align-items: center;
+  color: white;
+  font-size: larger;
+}
+
+.content h2 {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
+}
+
+.content p {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: large;
 }
 
 .arrow-container {
@@ -87,12 +106,13 @@ button.hover-white:hover {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
 }
 
-.banne{
+.banne {
   margin-bottom: 180px;
 }
 
@@ -108,11 +128,13 @@ button.hover-white:hover {
   .slider-container {
     height: 500px;
   }
+
   .ifsa {
     height: 500px;
   }
-  .banne{
+
+  .banne {
     margin-bottom: 100px;
   }
-  
+
 }

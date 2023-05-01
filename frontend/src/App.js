@@ -76,6 +76,9 @@ function App() {
               <li>
                 <a href="/trade">טרייד אין</a>
               </li>
+              <li>
+                <a href="/rent">השכרת תכשיטים</a>
+              </li>
             </ul>
           </div>
         </nav>
