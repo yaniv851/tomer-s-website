@@ -2,7 +2,7 @@ import { defineType, defineField, defineArrayMember } from 'sanity'
 
 export default {
   name: 'product',
-  title: 'Product',
+  title: 'מוצרים',
   type: 'document',
   // initialValue: async () => ({
   //     title: await fetch('http://localhost:3001/api/data')

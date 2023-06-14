@@ -1,8 +1,8 @@
-.wrapwra{
+.wrapwra {
     width: 100%;
 }
 
-.wrapwra .realhead h1{
+.wrapwra .realhead h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,7 +66,7 @@
     transition: 1s;
 }
 
-.contentwrap{
+.contentwrap {
     display: flex;
     flex-direction: row;
     width: 90%;
@@ -74,16 +74,41 @@
     margin-bottom: 30px;
 }
 
-.contentwrap .more{
+.contentwrap .more {
     margin-right: 40px;
 }
 
-.contentwrap .more h3{
+.contentwrap .more h3 {
     margin: 0;
     font-weight: 300;
 }
 
-.contentwrap .more a{
+.contentwrap .more a {
     color: #B07612;
     text-decoration: none;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+    .contentwrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cencelForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .more {
+        margin-top: 20px;
+    }
+
+    .contentwrap .more h3 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 17px;
+    }
 }

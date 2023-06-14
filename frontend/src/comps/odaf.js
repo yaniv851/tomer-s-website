@@ -150,8 +150,8 @@ function Product() {
                 {showMeasureButton && <button className='measurebtn' style={{ marginTop: 10, padding: 5 }} onClick={togglePopup}>בחר מידה</button>}
                 {popupVisible &&
                   <div className="popup" dir='rtl'>
-                    <button className='close-btn' onClick={togglePopup}>
-                      <span className='modalCloseBTN'>&times;</span>
+                    <button className='close-btn'>
+                      <span>&times;</span>
                     </button>
                     <h2>מידות</h2>
                     <div className='measuresbtns' dir='ltr'>

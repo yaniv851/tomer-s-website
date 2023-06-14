@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Article from "./pages/article";
 import Accordion from "./pages/about";
 import Product from "./comps/product";
+import ProductR from "./comps/productR";
 import T1 from "./pages/takanon/t1";
 import T2 from "./pages/takanon/t2";
 import T3 from "./pages/takanon/t3";
 import T4 from "./pages/takanon/t4";
+import CardContain from "./pages/productRent";
 import "./App.css";
 import T5 from "./pages/takanon/t5";
 import T6 from "./pages/takanon/t6";
@@ -30,7 +32,7 @@ import { FaCreditCard } from 'react-icons/fa';
 import "./comps/style/footer.css";
 import Cencel from "./pages/cencelOrder";
 import Cate from "./pages/categories";
-
+import Odafim from "./comps/odafim";
 
 function App() {
   const [showIcons, setShowIcons] = useState(false);
@@ -71,7 +73,7 @@ function App() {
                 <a href="/answers">שאלות ותשובות</a>
               </li>
               <li>
-                <a href="/contact">עודפים</a>
+                <a href="/odafim">עודפים</a>
               </li>
               <li>
                 <a href="/trade">טרייד אין</a>
@@ -114,9 +116,12 @@ function App() {
           <Route path="/blog/:slug" element={<Blog />} />
           <Route path="/vali" element={<MyDropzone />} />
           <Route path="/answers" element={<Qa />} />
+          <Route path="/rent" element={<CardContain />} />
           <Route path="/trade" element={<Trade />} />
           <Route path="/DealCancellation" element={<Cencel />} />
           <Route path="/categories/:categoryName" element={<Cate />} />
+          <Route path="/rent/:title" element={< ProductR />} />
+          <Route path="/odafim" element={<Odafim/>} />
         </Routes>
       </BrowserRouter>
 

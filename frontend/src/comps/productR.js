@@ -5,7 +5,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import "./style/product.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-function Product() {
+function ProductR() {
   const { title } = useParams();
   const [popupVisible, setPopupVisible] = useState(false);
   const [allProductData, setAllProducts] = useState(null);
@@ -150,8 +150,8 @@ function Product() {
                 {showMeasureButton && <button className='measurebtn' style={{ marginTop: 10, padding: 5 }} onClick={togglePopup}>בחר מידה</button>}
                 {popupVisible &&
                   <div className="popup" dir='rtl'>
-                    <button className='close-btn' onClick={togglePopup}>
-                      <span className='modalCloseBTN'>&times;</span>
+                    <button className='close-btn'>
+                      <span>&times;</span>
                     </button>
                     <h2>מידות</h2>
                     <div className='measuresbtns' dir='ltr'>
@@ -208,7 +208,7 @@ function Product() {
                   "currency": "ILS"
                 }}
                 >
-                  <PayPalButtons
+                  {/* <PayPalButtons
                     createOrder={(data, actions) => {
                       return actions.order.create({
                         purchase_units: [
@@ -227,6 +227,24 @@ function Product() {
                         setOrderID(orderID);
                       });
                     }}
+                  /> */}
+
+                  <h2>להשכרת תכשיטים:</h2>
+                  <PayPalButtons
+                    createSubscription={(data, actions) => {
+                      return actions.subscription.create({
+                        plan_id: "P-2AH10986XT888271SMRGUHRQ"
+                      });
+                    }}
+                    onApprove={(data, actions) => {
+                      alert(data.subscriptionID);
+                    }}
+                    style={{
+                      shape: "pill",
+                      color: "blue",
+                      layout: "vertical",
+                      label: "paypal"
+                    }}
                   />
                 </PayPalScriptProvider>
 
@@ -240,4 +258,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductR;

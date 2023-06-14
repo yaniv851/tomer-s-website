@@ -61,6 +61,7 @@
     background-color: white;
     transition: 1s;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .tas .measurebtn:hover {
@@ -153,6 +154,7 @@
     transition: 0.7s;
     cursor: pointer;
     border: none;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .color-input button:hover {
@@ -168,6 +170,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
     transition: 0.3s ease;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 
 .diamond-info h3 {
@@ -249,11 +252,30 @@
     border: none;
     cursor: pointer;
     transition: 1s;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    outline: none;
+}
+
+.popup .measuresbtns button:focus{
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    outline: none;
 }
 
 .popup .measuresbtns button:hover {
     scale: 1.1;
     transition: 1s;
+}
+
+.popup .close-btn{
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.modalCloseBTN{
+    color: black;
+    font-size: 30px;
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+    position: fixed;
 }
 
 @media (max-width: 767px) {

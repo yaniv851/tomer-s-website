@@ -82,7 +82,54 @@
     color: black;
 }
 
-@media (max-width: 767px) {
+.para{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+.para p{
+    width: 400px;
+}
+
+.poo{
+    display: flex;
+    justify-content: center;
+}
+
+.poo p{
+    width: 400px;
+}
+
+.column h3{
+    text-align: center;
+    font-family: 'Tinos', serif;
+}
+
+.wras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.wras .card1{
+    display: flex;
+    flex-direction: column;
+}
+
+.wras .card2{
+    display: flex;
+    flex-direction: column;
+}
+
+.wras .card2 p{
+    width: 400px;
+}
+
+@media (min-width: 375px) and (max-width: 767px)  {
     .cardContainer {
         display: grid;
         row-gap: 30px;
@@ -113,5 +160,49 @@
         width: 50px;
         border-radius: 5px;
         font-size: 7px;
+    }
+
+    .wras .card2 p{
+        width: 200px;
+    }
+
+    .poo p{
+        width: 200px;
+    }
+    
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .cardContainer{
+        grid-template-columns: repeat(3, minmax(30px, 1fr));
+    }
+
+    .cards {
+        height: 190px;
+        width: 100px;
+    }
+
+    .cards img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .cards p{
+        font-size: x-small;
+    }
+
+    .wras .card2 p{
+        width: 80px;
+    }
+
+    .poo p{
+        width: 80px;
+    }
+
+    .cardbtn {
+        width: 40px;
+        border-radius: 5px;
+        font-size: 7px;
+        margin-bottom: 10px;
     }
 }

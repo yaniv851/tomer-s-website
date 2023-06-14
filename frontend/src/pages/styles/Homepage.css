@@ -61,7 +61,7 @@
   transition: text-decoration-color 1s ;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 767px) {
   .navigation-menu li{
     margin: 0.3rem;
   }
@@ -75,3 +75,15 @@
     width: 100%;
   }
 }
+
+@media (max-width: 320px) {
+  .navigation-menu li{
+    margin: 0.2rem;
+  }
+  
+  .navigation-menu li a {
+    font-size: 5px;
+    width: 100%;
+  }
+}
+
